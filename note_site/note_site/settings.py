@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'notes',
-    
+    'authors',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'authors.CastomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

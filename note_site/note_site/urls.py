@@ -18,13 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from notes.views import AuthorModelViewSet
+from authors.views import CastomUserModelView
 
 router = DefaultRouter()
-router.register('authors', AuthorModelViewSet)
+router.register('authors', CastomUserModelView)
 
 urlpatterns = [
    path('admin/', admin.site.urls),
-   path('api-auth/', include('rest_framework.urls')),
+   path('api-authors/', include('rest_framework.urls')),
    path('api/', include(router.urls)),
+   
 ]
