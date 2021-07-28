@@ -9,12 +9,13 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+
 class Todo(models.Model):
     name = models.CharField(max_length=80)
     is_active = models.BooleanField(default=False)
     users = models.ManyToManyField(CastomUser)
     project = models.ManyToManyField(Project)
+    is_delete = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
-    
