@@ -32,5 +32,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 #    path('api-authors/', CastomUserModelView.as_view()),
     path('api/', include(router.urls)),
-   
+    path('api-auth/', include('rest_framework.urls'))   
 ]
