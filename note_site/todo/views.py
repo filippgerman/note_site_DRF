@@ -7,7 +7,7 @@ from .filters import ProjectFilter, TodoFilter
 
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin
 from rest_framework.viewsets import GenericViewSet
-
+from rest_framework.permissions import IsAdminUser
 
 
 class ProjectPagination(LimitOffsetPagination):
@@ -21,6 +21,7 @@ class ProjectModelView(ModelViewSet):
     serializer_class = ProjectModelSerializer
     pagination_class = ProjectPagination
     filterset_class = ProjectFilter
+    permission_classes = [IsAdminUser]
 
 class TodoModelView(ModelViewSet):
     queryset = Todo.objects.all()
