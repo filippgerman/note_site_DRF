@@ -22,14 +22,15 @@ from rest_framework.routers import DefaultRouter
 from authors.views import CastomUserModelView
 from todo.views import ProjectModelView, TodoModelView
 
+
 router = DefaultRouter()
 router.register('authors', CastomUserModelView)
 router.register('projects', ProjectModelView)
 router.register('todo', TodoModelView)
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
-   path('api-authors/', include('rest_framework.urls')),
-   path('api/', include(router.urls)),
+    path('admin/', admin.site.urls),
+#    path('api-authors/', CastomUserModelView.as_view()),
+    path('api/', include(router.urls)),
    
 ]
